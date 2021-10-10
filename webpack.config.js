@@ -4,6 +4,11 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const NODE_ENV = process.env.NODE_ENV;
 const IS_DEV = NODE_ENV === 'development';
 
+function setupDevtool() {
+	if (IS_DEV) return 'eval';
+	return false;
+}
+
 module.exports = {
 	entry: path.resolve(__dirname, 'src/index.jsx'),
 	output: {
@@ -32,4 +37,5 @@ module.exports = {
 		open: true,
 		hot: IS_DEV,
 	},
+	devtool: setupDevtool(),
 };
