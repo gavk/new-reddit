@@ -9,4 +9,12 @@ module.exports = {
 		filename: 'index.js',
 	},
 	mode: NODE_ENV ? NODE_ENV : "development",
+	module: {
+		rules: [
+			{
+				test: /\.[jt]sx?$/,
+				use: ['ts-loader'],
+			}
+		]
+	}
 };
