@@ -17,7 +17,7 @@ module.exports = {
 		rules: [
 			{
 				test: /\.[jt]sx?$/,
-				use: ['ts-loader'],
+				use: ['babel-loader'],
 			}
 		]
 	},
